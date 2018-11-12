@@ -13,7 +13,7 @@
 10. currencies (devises)
 11. borrowers (pays emprunteur)
 12. borrower_types (type d'organisateur)
-13. qualification_type (types de qualification)
+13. qualification_types (types de qualification)
 14. tenderfile (demandes de soumissionnaires)
 16. procurementcouncil (commission de passation de marchés)
 17. assessments (évaluation des offres, des rapports, propositions techniques, propositions financières, ...)
@@ -34,6 +34,7 @@
 32. contract_steps (étapes d'exécution du marché : *OUVERTURE LETTRE DE CRÉDIT*, ...)
 33. contract_stages (type d'étape du contrat : *EXÉCUTION*, *PRÉPARATION*)
 34. organizer_types (types d'organisateurs : *PAYS*, *RÉGION*, *ENTREPRISE*, ...)
+35. assessment_types (types d'évaluation : *ÉVALUATION DES OFFRES*, *ÉVALUATION TECHNIQUE*, ...)
 
 
 ## ENTITIES DESCRIPTION 
@@ -61,6 +62,7 @@
 ### activities
 - activity_id
 - activity_type_id
+- project_id
 - categorie_id
 - description
 - bidding_id
@@ -132,3 +134,27 @@
 - label
 
 ### tenderfile
+- tenderfile_id
+- tenderfile_type_id
+- reference
+- activity_id
+- media_id
+
+### tenderfile_types
+- tenderfile_type_id
+- label
+
+### tenderfile_step_types
+- tenderfile_step_type_id
+- label
+
+### tenderfile_steps
+- tenderfile_step_id
+- tenderfile_step_type_id
+- label
+- duration
+
+### tenderfilesteps
+- tenderfile_id
+- tenderfile_step_id
+
