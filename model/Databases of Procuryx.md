@@ -32,7 +32,8 @@
 29. contract_stages (type d'étape du contrat : *EXÉCUTION*, *PRÉPARATION*)
 30. organizer_types (types d'organisateurs : *PAYS*, *RÉGION*, *ENTREPRISE*, ...)
 31. membership (membres des commissions de PM)
-32. role (rôles des acteurs du système : *SPM*, *MEMBRE DE COMMISSION*,**, 
+32. role (rôles des acteurs du système : *SPM*, *MEMBRE DE COMMISSION*, ...)
+33. key
 
 
 ## ENTITIES DESCRIPTION 
@@ -220,3 +221,7 @@
 ### media
 - media_id
 - path
+
+### key
+- key_cheksum
+- licence
