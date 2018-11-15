@@ -69,11 +69,14 @@ public class Screen extends Application {
     private StringProperty title_pr = new SimpleStringProperty();
     private int dim_max_length;
     private int dim_max_height;
-	private String icon_url;
+	private String icon_url;    
+    private String file_to_decomp ;
+    private StringProperty title_pr = new SimpleStringProperty();
+   
 	
 	@Override
     public void start(Stage primaryStage) {
-        primaryStage.setTitle("Procuryx - New Procurement Era");       
+        primaryStage.setTitle(label);       
         primaryStage.initStyle(StageStyle.TRANSPARENT);
          // On initialise la fenêtre à 500 x 800
         primaryStage.setMaxHeight(dim_max.getHeight());
@@ -109,6 +112,13 @@ public class Screen extends Application {
 		
 	}
 	
+	public void setDimensions(int length, int height){
+		
+	}
+	
+	public void setDimensionsMax (int length, int height){
+	
+	}
 	
 	
 }
