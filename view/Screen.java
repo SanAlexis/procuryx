@@ -64,30 +64,51 @@ public class Screen extends Application {
 	private Text label = new Text();
     private ImageView background ;
     private String folderUrl ;    
-    private Dimensions dim;
-    private String file_to_decomp ;
+    private int dim_length;
+	private int dim_height;
     private StringProperty title_pr = new SimpleStringProperty();
-    private Dimensions dim_max;
+    private int dim_max_length;
+    private int dim_max_height;
+	private String icon_url;
 	
 	@Override
     public void start(Stage primaryStage) {
-        Button btn = new Button();
-        btn.setText("Say 'Hello World'");
-        btn.setOnAction(new EventHandler<ActionEvent>() {
- 
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
-            }
-        });
-        
+        primaryStage.setTitle("Procuryx - New Procurement Era");       
+        primaryStage.initStyle(StageStyle.TRANSPARENT);
+         // On initialise la fenêtre à 500 x 800
+        primaryStage.setMaxHeight(dim_max.getHeight());
+        primaryStage.setMaxWidth(dim_max.getWidth());
         StackPane root = new StackPane();
-        root.getChildren().add(btn);
-
- Scene scene = new Scene(root, 300, 250);
-
-        primaryStage.setTitle("Hello World!");
+        
+        
+        // ++++ INITIALISATION DU PROCESSUS ++++
+        // -------------- Sélection du fichier à dézipper et du dossier d'installation -----------------
+        Scene scene = new Scene(root, dim.getWidth(), dim.getHeight(), Color.WHITE);
+        scene.heightProperty().add(primaryStage.heightProperty());
+        scene.widthProperty().add(primaryStage.widthProperty());
+        primaryStage.setScene(scene);
+        primaryStage.setIconified(true);
+        
+        // Insertion du background
+        background = ImageProvider.getImageViewFromURI(ImageProvider.FOND_BLANC);
+        AnchorPane background_pane = new AnchorPane(background);
+        root.getChildren().add(background_pane);
         primaryStage.setScene(scene);
         primaryStage.show();
-    }	
+    }
+	
+	public void setLabel(String label){
+		
+	}
+	
+	public String getLabel(){
+	
+	}
+	
+	public void setBackground(ImageView bg){
+		
+	}
+	
+	
+	
 }
