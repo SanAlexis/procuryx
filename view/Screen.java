@@ -1,6 +1,6 @@
 /** 
 * <h1>Screen</h1>
-* Interface des écrans. Chaque écran repréente une étape lors du processus de PM.
+* Interface des écrans. Chaque écran représente une étape lors du processus de PM.
 * @author Alexis TADIFO
 * @version 0.1 
 * @since 2018/11/10 
@@ -58,27 +58,29 @@ import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import Dimensions;
 
 	
 public class Screen extends Application {
-	private Text label = new Text();
-    private ImageView background ;
-    private String folderUrl ;    
-    private int dim_length;
+    	private Text label = new Text();
+    	private ImageView background ;
+    	private String folderUrl ;    
+   	private int dim_length;
 	private int dim_height;
-    private StringProperty title_pr = new SimpleStringProperty();
-    private int dim_max_length;
-    private int dim_max_height;
+    	private StringProperty title_pr = new SimpleStringProperty();
+    	private int dim_max_length;
+    	private int dim_max_height;
 	private String icon_url;    
-    private String file_to_decomp ;
-    private StringProperty title_pr = new SimpleStringProperty();
+    	private String file_to_decomp ;
+	private Dimensions dim = new Dimensions();
+	private Dimensions dim_max = new Dimensions();
    
 	
 	@Override
     public void start(Stage primaryStage) {
-        primaryStage.setTitle(label);       
+        primaryStage.setTitle(label.toString());       
         primaryStage.initStyle(StageStyle.TRANSPARENT);
-         // On initialise la fenêtre à 500 x 800
+         // On initialise la taille de la fenêtre
         primaryStage.setMaxHeight(dim_max.getHeight());
         primaryStage.setMaxWidth(dim_max.getWidth());
         StackPane root = new StackPane();

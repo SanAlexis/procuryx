@@ -34,6 +34,10 @@ public class Dimensions {
         this.height = height;
         this.width = width;
     }
-    
+	
+    public Dimensions(){
+	this.height = 0;
+	this.width = 0;
+    }
 
 }
