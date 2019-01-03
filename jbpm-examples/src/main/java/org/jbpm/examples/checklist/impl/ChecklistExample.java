@@ -31,8 +31,7 @@ import org.kie.api.task.UserGroupCallback;
 public class ChecklistExample {
 	
 	public static void main(String[] args) {
-		try {
-			
+		try {			
 			JBPMHelper.startH2Server();
 			JBPMHelper.setupDataSource();
 			RuntimeEnvironment environment = RuntimeEnvironmentBuilder.Factory.get().newDefaultBuilder()
