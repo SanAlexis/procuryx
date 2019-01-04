@@ -17,7 +17,8 @@ Cette partie décrit les postulats que respectent à la fois les procédures PM 
 La procédure PM utilise deux types d'entités : 
 - Les propositions
 - Les nœuds  
-**Une proposition** est une opération faite entre plusieurs éléments et qui renvoie un résultat **TRUE** ou **FALSE**. Par exemple une proposition peut consister à vérifier si une valeur particulière existe dans la base de données.
+  
+**Une proposition** est une opération faite entre plusieurs éléments et qui renvoie un résultat **TRUE** ou **FALSE**. Par exemple une proposition peut consister à vérifier si une valeur particulière existe dans la base de données.  
 **Un nœud** est une étape de la procédure. Chaque nœud a un nœud parent et plusieurs nœuds fils. Un nœud est associé à : un écran, un déclencheur, un nœud parent, des nœuds fils, des branches (qui sont les résultats de propositions permettant d'accéder à un nœud fils).
 
 ### Opérations
@@ -31,20 +32,39 @@ La grammaire doit être capable de réaliser les opérations suivantes :
 
 ## SYNTAXE XML DE LA PROCÉDURE
 Nous allons décrire la DTD du fichier de description des procédures PM.
+process (name, id, version, update_date)
+		|__ node* (type, name, id, parent, ...)
+		|__ node
+		|		|__ screen (class_name, ...)
+		|		|__ target* (id, name, node_name, ...)
+		|					|__ condition* (relation)
+		|					|			  |__ condition*
+		|					|			  				|__ operation* (relation)
+		|					|										  |__ element* (schema, table, colonne) : valeur
+		|					|										  			  |__ filter* (colonne) : valeur
+		|					|													  |__ enum* : valeur
+		|					|__ operation
+		|__ node
+		
 ```xml
 <?xml version="1.0"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-<xs:element name="note">
+<xs:element name="process">
   <xs:complexType>
     <xs:sequence>
-      <xs:element name="to" type="xs:string"/>
-      <xs:element name="from" type="xs:string"/>
-      <xs:element name="heading" type="xs:string"/>
-      <xs:element name="body" type="xs:string"/>
+      <xs:element name="node" type="xs:string">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="screen" type="xs:string"/>
+				<xs:element name="target" type="xs:string"/>
+    	    </xs:sequence>
+  		</xs:complexType>
+	  </xs:element>	
     </xs:sequence>
   </xs:complexType>
 </xs:element>
 
 </xs:schema>
 ```
+
