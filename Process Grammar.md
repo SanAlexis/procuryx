@@ -16,7 +16,7 @@ Cette partie décrit les postulats que respectent à la fois les procédures PM 
 ### Entités PM
 La procédure PM utilise deux types d'entités : 
 - Les propositions
-- Les nœuds
+- Les nœuds  
 **Une proposition** est une opération faite entre plusieurs éléments et qui renvoie un résultat **TRUE** ou **FALSE**. Par exemple une proposition peut consister à vérifier si une valeur particulière existe dans la base de données.
 **Un nœud** est une étape de la procédure. Chaque nœud a un nœud parent et plusieurs nœuds fils. Un nœud est associé à : un écran, un déclencheur, un nœud parent, des nœuds fils, des branches (qui sont les résultats de propositions permettant d'accéder à un nœud fils).
 
