@@ -32,6 +32,7 @@ La grammaire doit être capable de réaliser les opérations suivantes :
 
 ## SYNTAXE XML DE LA PROCÉDURE
 Nous allons décrire la DTD du fichier de description des procédures PM.
+```
 process (name, id, version, update_date)
 		|__ node* (type, name, id, parent, ...)
 		|__ node
@@ -46,6 +47,7 @@ process (name, id, version, update_date)
 		|					|__ operation
 		|__ node
 		
+```
 ```xml
 <?xml version="1.0"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
